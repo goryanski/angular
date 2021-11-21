@@ -1,0 +1,42 @@
+@background-main-color: #ffd7a3;
+@text-header-color: #299e9e;
+
+.day {
+  border: 1px solid @text-header-color;
+  padding: 50px;
+  text-align: center;
+  margin-top: 20px;
+  cursor: pointer;
+  &:hover {
+    background-color: @background-main-color;
+  }
+  img {
+    width: 50px;
+  }
+  .description {
+    font-size: 14px;
+  }
+}
+
+
+@media (max-width: 1100px) {
+  .day {
+    padding: 20px;
+  }
+}
+@media (max-width: 740px) {
+  .day {
+    padding: 5px;
+  }
+}
+@media (max-width: 600px) {
+  img {
+    width: 20px;
+  }
+  .day-name {
+    font-size: 10px;
+  }
+  .description {
+    display: none;
+  }
+}

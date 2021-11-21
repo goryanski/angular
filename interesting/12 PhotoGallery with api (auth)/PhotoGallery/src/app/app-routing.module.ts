@@ -1,0 +1,51 @@
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+import {PhotosComponent} from "./photo-gallery/components/photos/photos.component";
+import {ErrorComponent} from "./photo-gallery/components/error/error.component";
+import {AddPhotoComponent} from "./photo-gallery/components/add-photo/add-photo.component";
+import {EditPhotoComponent} from "./photo-gallery/components/photo-manager/edit-photo/edit-photo.component";
+import {PhotoManagerComponent} from "./photo-gallery/components/photo-manager/photo-manager.component";
+import {PhotoCommentsComponent} from "./photo-gallery/components/photo-manager/photo-comments/photo-comments.component";
+import {LoginComponent} from "./auth/login/login.component";
+import {AuthGuard} from "./common/guards/auth.guard";
+
+const routes: Routes = [
+  {
+    path: '',
+    component: PhotosComponent,
+  },
+  {
+    path: 'login',
+    component: LoginComponent
+  },
+  {
+    path: 'add-photo',
+    component: AddPhotoComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'photo-manager/:id',
+    component: PhotoManagerComponent,
+    children: [
+      {
+        path: 'edit-photo/:id',
+        component: EditPhotoComponent
+      },
+      {
+        path: 'comments/:id',
+        component: PhotoCommentsComponent
+      }
+    ],
+    canActivate: [AuthGuard]
+  },
+  {
+    path: '**',
+    component: ErrorComponent
+  }
+];
+
+@NgModule({
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule]
+})
+export class AppRoutingModule { }

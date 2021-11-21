@@ -1,0 +1,34 @@
+@import "../../shared/styles/variables";
+
+.recipe-card {
+  max-width: 200px;
+  text-align: center;
+  margin: 20px;
+  padding-bottom: 5px;
+  .title {
+    font-size: 12px;
+    position: absolute;
+    display: none;
+    max-width: 200px;
+    padding: 5%;
+    border-bottom-right-radius: 20%;
+    border-bottom-left-radius: 20%;
+  }
+  img {
+    margin-bottom: 0;
+  }
+}
+
+.recipe-card:hover {
+  background-color: $base-theme-color;
+  box-shadow: 0 0 25px 0 white;
+  cursor: pointer;
+  .eye-icon {
+    color: $base-element-color;
+  }
+  .title {
+    display: block;
+    background-color: $base-theme-color;
+    color: $base-element-color;
+  }
+}

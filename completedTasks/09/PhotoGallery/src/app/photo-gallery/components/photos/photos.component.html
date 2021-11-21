@@ -1,0 +1,7 @@
+<div class="add-photo-btn">
+  <button class="btn btn-warning" (click)="onAddNewPhotoClick()"><i class="fas fa-plus"></i> new photo</button>
+</div>
+
+<div class="photos">
+  <app-photo *ngFor="let ph of photos" [photo]="ph"></app-photo>
+</div>

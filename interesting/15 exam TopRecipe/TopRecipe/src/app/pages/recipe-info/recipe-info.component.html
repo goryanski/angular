@@ -1,0 +1,48 @@
+<div class="recipe-info">
+  <div class="title">{{recipe.title}}</div>
+  <div class="recipe-image"><img src="{{recipe.image}}" alt="recipe image"></div>
+
+  <!--icons-->
+  <div class="icons">
+    <div class="benefits-icons">
+      <p *ngIf="recipe.veryHealthy"><mat-icon class="icon">check_circle_outline</mat-icon>&nbsp;&nbsp;&nbsp;Very healthy</p>
+      <p *ngIf="recipe.veryPopular"><mat-icon class="icon">check_circle_outline</mat-icon>&nbsp;&nbsp;&nbsp;Very popular</p>
+      <p *ngIf="recipe.glutenFree"><mat-icon class="icon">check_circle_outline</mat-icon>&nbsp;&nbsp;&nbsp;Gluten free</p>
+      <p *ngIf="recipe.dairyFree"><mat-icon class="icon">check_circle_outline</mat-icon>&nbsp;&nbsp;&nbsp;Dairy free</p>
+      <p *ngIf="recipe.vegetarian"><mat-icon class="icon">check_circle_outline</mat-icon>&nbsp;&nbsp;&nbsp;Vegetarian</p>
+      <p *ngIf="recipe.cheap"><mat-icon class="icon">check_circle_outline</mat-icon>&nbsp;&nbsp;&nbsp;Economy</p>
+    </div>
+    <div class="main-icons">
+      <p><mat-icon class="icon">healing</mat-icon> Health score: {{recipe.healthScore}}</p>
+      <p><mat-icon class="icon">av_timer</mat-icon> Ready in minutes: {{recipe.readyInMinutes}}</p>
+      <p><mat-icon  class="icon">thumb_up_alt</mat-icon> Aggregate likes: {{recipe.aggregateLikes}}</p>
+      <p><mat-icon  class="icon">room_service</mat-icon> Servings: {{recipe.servings}}</p>
+      <p><mat-icon  class="icon">attach_money</mat-icon> Price per serving: {{recipe.pricePerServing}}</p>
+    </div>
+</div>
+
+  <h2>Ingredients:</h2>
+  <div class="ingredients-image"><img src="{{recipe.ingredientsImg}}" alt="recipe ingredientsImg"></div>
+
+  <div [innerHTML]="recipe.summary" class="summary"></div>
+
+  <h2>Instruction:</h2>
+  <div class="instruction" *ngIf="recipe.instructionSteps.length">
+    <p class="instruction-step" *ngFor="let step of recipe.instructionSteps">
+      <span>{{step.number}}.</span>  {{step.step}}
+    </p>
+  </div>
+
+  <h2>Nutrition:</h2>
+  <div class="nutrition-image"><img src="{{recipe.nutritionImg}}" alt="recipe nutritionImg"></div>
+
+  <h2>Similar recipes:</h2>
+  <div class="similar-recipes">
+    <app-recipe-preview *ngFor="let recipe of similarRecipes" [recipe]="recipe" (click)="OnSimilarRecipeClick()"></app-recipe-preview>
+  </div>
+</div>
+
+
+
+
+

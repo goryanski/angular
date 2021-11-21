@@ -1,0 +1,15 @@
+h2 {
+  margin-top: 5%;
+  margin-left: 5%;
+  color: white;
+}
+
+.popular-recipes, .healthiest-recipes,
+.fastest-recipes, .cheapest-recipes {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+.cheapest-recipes {
+  margin-bottom: 5%;
+}

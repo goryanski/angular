@@ -1,0 +1,6 @@
+<div class="photo-comments" *ngIf="comments$ | async as comments; else loading">
+  <photo-comment *ngFor="let cmt of comments" [comment]="cmt"></photo-comment>
+  <div *ngIf="comments.length === 0" class="no-comments">There're no comments yet</div>
+</div>
+
+<ng-template #loading>Loading...</ng-template>

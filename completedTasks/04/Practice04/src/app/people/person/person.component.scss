@@ -1,0 +1,22 @@
+$personColor: #1976d2;
+$selectedPersonColor: #ffc107;
+
+.person {
+  border: 2px solid  $personColor;
+  margin: 20px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  h4 {
+    text-align: center;
+  }
+  span {
+    color: $personColor;
+    font-weight: bold;
+  }
+}
+
+.selected {
+  border: 5px solid $selectedPersonColor;
+  box-shadow: 5px 5px 5px #8f8f8f;
+}

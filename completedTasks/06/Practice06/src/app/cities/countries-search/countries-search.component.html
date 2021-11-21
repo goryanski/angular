@@ -1,0 +1,12 @@
+<form class="create-form mt-5" [formGroup]="form">
+  <div class="mb-3">
+    <label for="inputSearchCity" class="form-label">Search cities</label>
+    <input type="text" class="form-control"
+           formControlName="searchCities" id="inputSearchCity" aria-describedby="emailHelp">
+    <div *ngIf="form.controls['searchCities'].errors">
+      <div *ngIf="form.controls['searchCities'].errors.forbiddenName"
+           class="form-text text-danger">Name of country can't be Vietnam
+      </div>
+    </div>
+  </div>
+</form>

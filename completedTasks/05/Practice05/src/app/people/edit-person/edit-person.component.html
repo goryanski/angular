@@ -1,0 +1,84 @@
+<form class="edit-form mt-5" [formGroup]="form" [class.hidden]="isFormHidden">
+  <div class="mb-3">
+    <label for="inputFirstName" class="form-label">First name</label>
+    <input type="text" class="form-control"
+           formControlName="firstName" id="inputFirstName" aria-describedby="emailHelp">
+    <div *ngIf="form.controls['firstName'].errors">
+      <div *ngIf="form.controls['firstName'].errors.required" class="form-text text-danger">Field is required</div>
+      <div *ngIf="form.controls['firstName'].errors.pattern"
+           class="form-text text-danger">English letters only, uppercase first letter, (3-12 symbols)
+      </div>
+    </div>
+  </div>
+  <div class="mb-3">
+    <label for="inputLastName" class="form-label">Last name</label>
+    <input type="text" class="form-control"
+           formControlName="lastName" id="inputLastName">
+    <div *ngIf="form.controls['lastName'].errors">
+      <div *ngIf="form.controls['lastName'].errors.required" class="form-text text-danger">Field is required</div>
+      <div *ngIf="form.controls['lastName'].errors.pattern" class="form-text text-danger">
+        English letters only  (and digits), uppercase first letter, (3-12 symbols)
+      </div>
+    </div>
+  </div>
+  <div class="mb-3">
+    <label for="inputPatronymic" class="form-label">Patronymic</label>
+    <input type="text" class="form-control"
+           formControlName="patronymic" id="inputPatronymic">
+    <div *ngIf="form.controls['patronymic'].errors">
+      <div *ngIf="form.controls['patronymic'].errors.required"
+           class="form-text text-danger">Field is required
+      </div>
+      <div *ngIf="form.controls['patronymic'].errors.pattern"
+           class="form-text text-danger">English letters only, uppercase first letter, (3-12 symbols)
+      </div>
+    </div>
+  </div>
+  <div class="mb-3">
+    <label for="inputEmail" class="form-label">Email</label>
+    <input type="text" class="form-control"
+           formControlName="email" id="inputEmail">
+    <div *ngIf="form.controls['email'].errors">
+      <div *ngIf="form.controls['email'].errors.required" class="form-text text-danger">Field is required</div>
+      <div *ngIf="form.controls['email'].errors.email" class="form-text text-danger">Email is invalid</div>
+    </div>
+  </div>
+  <div class="mb-3">
+    <label for="inputBirth" class="form-label">Birth</label>
+    <input type="date" class="form-control"
+           formControlName="birth" id="inputBirth">
+    <div *ngIf="form.controls['birth'].errors">
+      <div *ngIf="form.controls['birth'].errors.required" class="form-text text-danger">Field is required</div>
+      <div *ngIf="form.controls['birth'].errors.mindate" class="form-text text-danger">It's less than min date</div>
+      <div *ngIf="form.controls['birth'].errors.maxdate" class="form-text text-danger">It's more than max date</div>
+    </div>
+  </div>
+  <div class="mb-3">
+    <div>Phones numbers ({{phonesNumbersControls.controls.length}}) -
+      <button class="btn btn-primary" (click)="addPhoneNumberInput()">+</button>
+    </div>
+    <div *ngFor="let number of phonesNumbersControls.controls;let idx = index"
+         formArrayName="phonesNumbers">
+      <div class="d-flex mt-3">
+        <input type="text" class="form-control" formControlName="{{idx}}" >
+        <button class="btn btn-danger" (click)="removePhoneNumberInput(idx)">x</button>
+      </div>
+      <div *ngIf="!phonesNumbersControls.controls[idx].valid" class="form-text text-danger">
+        must be first symbol '+' and then 12 digits
+      </div>
+    </div>
+  </div>
+
+  <div class="mt-5">
+    <button type="submit" [disabled]="!form.valid || !person.isSelected"
+            (click)="onSaveContactClick()" class="btn btn-warning">Save
+    </button>
+  </div>
+</form>
+
+<div class="mt-5 text-center d-flex justify-content-evenly">
+  <button class="btn btn-warning" [disabled]="!contactWasSelected" (click)="onFillFormWithSelectedContactClick()">
+    Fill form with selected contact
+  </button>
+  <button class="btn btn-warning btn-close-form" [disabled]="isFormHidden" (click)="hideFormBtnClick()">x</button>
+</div>

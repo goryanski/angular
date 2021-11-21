@@ -1,0 +1,46 @@
+@text-header-color: #299e9e;
+@background-default-color: #f5f5f5;
+@text-color-opacity: rgba(0, 0, 0, .5);
+
+header {
+  & .header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: @background-default-color;
+    & h1 {
+      color: @text-header-color;
+      font-size: 30px;
+      margin-left: 40px;
+    }
+    & .input-container {
+      position: relative;
+      height: 20px;
+      margin-right: 40px;
+      & input {
+        width: 200px;
+        height: 20px;
+      }
+      & i {
+        position: absolute;
+        top: 4px;
+        right: 9px;
+        color: @text-color-opacity;
+        &:hover {
+          color: @text-header-color;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 580px) {
+  header .header-top h1 {
+    font-size: 16px;
+    margin: 40px 10px;
+  }
+  header nav p {
+    font-size: 16px;
+  }
+}

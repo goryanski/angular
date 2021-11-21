@@ -1,0 +1,11 @@
+<header>
+  <div class="header-top">
+    <h1>MY WEATHER</h1>
+    <div class="input-container">
+      <form [formGroup]="form">
+        <input type="text" formControlName="searchField">
+      </form>
+      <i class="fas fa-search" (click)="onSearchClick()"></i>
+    </div>
+  </div>
+</header>

@@ -1,0 +1,12 @@
+<ng-container *ngIf="cityWeather$ | async as cityWeather">
+  <ng-container *ngIf="cityWeather.list.length; else cityNotFound">
+    <app-city-info [list]="cityWeather.list"></app-city-info>
+    <ng-container *ngIf="currentDay$ | async as currentDay">
+      <app-hourly-weather [detaletDayWeather]="currentDay"></app-hourly-weather>
+    </ng-container>
+  </ng-container>
+
+  <ng-template #cityNotFound>
+    <app-city-not-found></app-city-not-found>
+  </ng-template>
+</ng-container>

@@ -1,0 +1,13 @@
+<div class="forms">
+  <create-person (createNewPersonEvent)="onCreatePerson($event)"></create-person>
+  <edit-person (saveEditedPersonEvent)="onSaveEditedPerson($event)"
+               [person]="selectedPerson"
+               [contactWasSelected]="isContactSelected">
+  </edit-person>
+</div>
+<h1 class="mt-5 text-center">All contacts</h1>
+<div class="people">
+  <app-people-person *ngFor="let p of people" [person]="p"
+                     (editEvent)="onSelectContactClick($event)">
+  </app-people-person>
+</div>

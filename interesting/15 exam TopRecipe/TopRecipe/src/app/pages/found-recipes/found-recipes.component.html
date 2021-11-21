@@ -1,0 +1,6 @@
+<div class="found-recipes">
+  <app-recipe-preview *ngFor="let recipe of foundRecipes" [recipe]="recipe"></app-recipe-preview>
+</div>
+<div class="go-back">
+  <button (click)="onBackClick()" mat-fab class="btnBack">Back</button>
+</div>

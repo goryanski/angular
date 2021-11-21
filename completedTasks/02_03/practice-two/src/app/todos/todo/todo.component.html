@@ -1,0 +1,13 @@
+<div class="todo-item" borderHover [class.completed]="todoItem.completed">  <!-- if todoItem.completed === true => add class '.completed'-->
+  <button class="btn-close" (click)="onDeleteClick()">x</button>
+  <div class="task-body">
+    <h3>{{todoItem.title}}</h3>
+    <div>{{todoItem.description}}</div>
+    <div><span>Start:</span> {{todoItem.startDate.toLocaleDateString()}}</div>
+    <div><span>End:</span> {{todoItem.endDate.toLocaleDateString()}}</div>
+    <div><span>Priority:</span> {{todoPriority}}</div>
+    <label shadowClick>Completed
+      <input type="checkbox" (click)="onCompleteClick()">
+    </label>
+  </div>
+</div>

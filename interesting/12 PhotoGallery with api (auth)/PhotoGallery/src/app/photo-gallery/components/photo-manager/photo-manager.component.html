@@ -1,0 +1,17 @@
+<div class="photo-manager-page">
+  <div class="links-container">
+    <button class="btn btn-warning" (click)="onEditClick()">
+      <i class="fas fa-pen"></i> &nbsp;&nbsp;&nbsp;Edit
+    </button>
+    <button class="btn btn-warning" (click)="onShowCommentsClick()">
+      <i class="fas fa-comments"></i> &nbsp;&nbsp;&nbsp;Show comments
+    </button>
+    <button class="btn btn-warning" (click)="onBackClick()">
+      <i class="fas fa-backward"></i> &nbsp;&nbsp;&nbsp;Back
+    </button>
+  </div>
+
+  <div class="selected-content">
+    <router-outlet></router-outlet>
+  </div>
+</div>

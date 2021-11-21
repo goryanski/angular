@@ -1,0 +1,16 @@
+<div class="search-header">
+  <h1>
+    <span class="blue-letter">C</span>
+    <span class="red-letter">o</span>
+    <span class="yellow-letter">o</span>
+    <span class="blue-letter">k</span>
+    <span class="green-letter">l</span>
+    <span class="red-letter">e</span>
+  </h1>
+  <div class="input-container">
+    <form [formGroup]="form">
+      <input type="text" formControlName="searchField">
+      <button (click)="onSearchClick()"><mat-icon>search</mat-icon></button>
+    </form>
+  </div>
+</div>

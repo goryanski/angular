@@ -1,0 +1,11 @@
+<h1 class="mt-5">Countries</h1>
+<app-countries-search (searchFieldChangedEvent)="onSearchFieldChanged($event)"
+                      (wrongCountryNameEvent)="onWrongCountryName()">
+</app-countries-search>
+
+
+<div class="countries">
+  <app-countries-country *ngFor="let c of foundCountries"
+                         [country]="c">
+  </app-countries-country>
+</div>

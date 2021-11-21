@@ -1,0 +1,12 @@
+$countryColor: #1976d2;
+$shadowCountryColor: #ffc107;
+
+.country {
+  border: 2px solid  $countryColor;
+  margin: 20px;
+  padding: 15px;
+  box-shadow: 3px 3px 3px $shadowCountryColor;
+  text-align: center;
+  color: $countryColor;
+  font-size: 20px;
+}

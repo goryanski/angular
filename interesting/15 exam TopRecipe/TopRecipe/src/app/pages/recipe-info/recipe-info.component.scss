@@ -1,0 +1,82 @@
+@import "../../shared/styles/variables";
+
+.recipe-info {
+  color: white;
+  font-size: 20px;
+  .title, h2 {
+    margin-top: 5%;
+    margin-left: 5%;
+    font-size: 22px;
+  }
+  .recipe-image, .ingredients-image, .nutrition-image {
+    text-align: center;
+    margin: 3%;
+    img {
+      width: 50%;
+      box-shadow: 0 0 25px 0 white;
+      border-radius: 10px;
+    }
+  }
+  .ingredients-image, .nutrition-image {
+    img {
+      box-shadow: 0 0 25px 0 black;
+    }
+  }
+  .icons {
+    .icon {
+      color: $base-element-color;
+    }
+    p {
+      margin: 10px;
+    }
+    .benefits-icons {
+      display: flex;
+      justify-content: space-evenly;
+      flex-wrap: wrap;
+      .icon {
+        font-size: 40px;
+      }
+    }
+    .main-icons {
+      margin-top: 3%;
+      text-align: center;
+    }
+  }
+  .summary {
+    background-color: white;
+    color: black;
+    padding: 5%;
+  }
+  .instruction {
+    padding: 5%;
+    .instruction-step {
+      span {
+        color: $base-element-color;
+        font-size: 24px;
+      }
+    }
+  }
+  .similar-recipes {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+  }
+}
+@media (max-width: 800px) {
+  .recipe-info {
+    .recipe-image, .ingredients-image, .nutrition-image {
+      img {
+        width: 70%;
+      }
+    }
+  }
+}
+@media (max-width: 600px) {
+  .recipe-info {
+    .recipe-image, .ingredients-image, .nutrition-image {
+      img {
+        width: 90%;
+      }
+    }
+  }
+}

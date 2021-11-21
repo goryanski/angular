@@ -1,0 +1,73 @@
+<form class="create-form mt-5" [formGroup]="form">
+  <div class="mb-3">
+    <label for="inputName" class="form-label">Photo name</label>
+    <input type="text" class="form-control"
+           formControlName="name" id="inputName" aria-describedby="emailHelp">
+    <div *ngIf="form.controls['name'].errors">
+      <div *ngIf="form.controls['name'].errors.required"
+           class="form-text text-danger">Field is required
+      </div>
+      <div *ngIf="form.controls['name'].errors.pattern"
+           class="form-text text-danger">English letters only, space, (2-14 symbols)
+      </div>
+    </div>
+  </div>
+  <div class="mb-3">
+      <label for="inputDescription" class="form-label">Photo description</label>
+      <input type="text" class="form-control"
+             formControlName="description" id="inputDescription">
+      <div *ngIf="form.controls['description'].errors">
+        <div *ngIf="form.controls['description'].errors.required"
+             class="form-text text-danger">Field is required
+        </div>
+        <div *ngIf="form.controls['description'].errors.pattern"
+             class="form-text text-danger">English letters only, digits, space, allowed ,.:!?-; (4-54 symbols)
+        </div>
+      </div>
+    </div>
+  <div class="mb-3">
+    <label for="inputRating" class="form-label">Photo rating</label>
+    <input type="number" class="form-control"
+           formControlName="rating" id="inputRating">
+    <div *ngIf="form.controls['rating'].errors">
+      <div *ngIf="form.controls['rating'].errors.required"
+           class="form-text text-danger">Field is required
+      </div>
+      <div *ngIf="form.controls['rating'].errors.min"
+           class="form-text text-danger">min value: 1
+      </div>
+      <div *ngIf="form.controls['rating'].errors.max"
+           class="form-text text-danger">max value: 5
+      </div>
+    </div>
+  </div>
+  <div class="mb-3">
+    <label for="inputAuthor" class="form-label">Photo author</label>
+    <input type="text" class="form-control"
+           formControlName="author" id="inputAuthor">
+    <div *ngIf="form.controls['author'].errors">
+      <div *ngIf="form.controls['author'].errors.required" class="form-text text-danger">Field is required</div>
+      <div *ngIf="form.controls['author'].errors.pattern"
+           class="form-text text-danger">English letters only, digits, space (2-18 symbols)</div>
+    </div>
+  </div>
+  <div class="mb-3">
+    <label for="inputPhotoPath" class="form-label">Photo url</label>
+    <input type="text" class="form-control"
+           formControlName="url" id="inputPhotoPath">
+    <div *ngIf="form.controls['url'].errors">
+      <div *ngIf="form.controls['url'].errors.required" class="form-text text-danger">Field is required</div>
+    </div>
+  </div>
+
+  <div class="mt-5">
+    <button [disabled]="!form.valid"
+            (click)="onSavePhotoClick()"
+            class="btn btn-warning">Save
+    </button>
+    <button (click)="onBackClick()"
+            class="btn btn-warning btn-back">Back
+    </button>
+  </div>
+</form>
+

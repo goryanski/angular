@@ -1,0 +1,15 @@
+.photo {
+  width: 18rem;
+  margin: 20px;
+  background-color: #e9f3ff;
+  img {
+    height: 10rem;
+  }
+  .card-info li {
+    background-color: #e9f3ff;
+  }
+  .card-links {
+    display: flex;
+    justify-content: space-evenly;
+  }
+}

@@ -1,0 +1,25 @@
+<div class="hourly-weather-block">
+  <h2>HOURLY ({{detaletDayWeather[0].date}})</h2>
+  <table>
+    <tr>
+      <td>HOURS</td>
+      <td *ngFor="let day of detaletDayWeather">{{day.time}}</td>
+    </tr>
+    <tr class="images">
+      <td></td>
+      <td *ngFor="let day of detaletDayWeather"><img src="{{day.img}}" alt="current weather image"></td>
+    </tr>
+    <tr class="bordered">
+      <td>Forecast</td>
+      <td *ngFor="let day of detaletDayWeather">{{day.description}}</td>
+    </tr>
+    <tr class="bordered">
+      <td>Temp (&deg;C)</td>
+      <td *ngFor="let day of detaletDayWeather">{{day.temp}}&deg;</td>
+    </tr>
+    <tr class="bordered">
+      <td>RealFeel</td>
+      <td *ngFor="let day of detaletDayWeather">{{day.tempReal}}&deg;</td>
+    </tr>
+  </table>
+</div>

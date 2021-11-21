@@ -1,0 +1,4 @@
+<div class="photo-comments">
+  <photo-comment *ngFor="let cmt of comments" [comment]="cmt"></photo-comment>
+</div>
+<div *ngIf="comments.length === 0" class="no-comments">There're no comments yet</div>

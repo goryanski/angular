@@ -1,0 +1,7 @@
+<div class="all-tasks">
+  <todo *ngFor="let todo of todos"
+        [todoItem]="todo"
+        (completeEvent)="onCompleteTaskClick($event)"
+        (deleteEvent)="onTaskDelete($event)">
+  </todo>
+</div>

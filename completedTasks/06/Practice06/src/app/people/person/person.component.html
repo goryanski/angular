@@ -1,0 +1,10 @@
+<div class="person" [class.selected]="person.isSelected">
+    <h4>{{person.firstName}}<br>{{person.lastName}}<br> {{person.patronymic}}</h4>
+    <div class="mt-4"><span>Mail:</span> {{person.email}}</div>
+    <div><span>Birth:</span> {{person.birth | date:'dd.MM.yyyy'}}</div>
+    <ul class="mt-3">
+      <li *ngFor="let number of person.phonesNumbers">{{number}}</li>
+    </ul>
+  <button class="btn btn-warning" (click)="onSelectContactClick()">Select</button>
+</div>
+

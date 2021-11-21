@@ -1,0 +1,20 @@
+
+<h2>The most popular recipes:</h2>
+<div class="popular-recipes">
+  <app-recipe-preview *ngFor="let recipe of popularRecipes$ | async" [recipe]="recipe"></app-recipe-preview>
+</div>
+
+<h2>The healthiest recipes:</h2>
+<div class="healthiest-recipes">
+  <app-recipe-preview *ngFor="let recipe of healthiestRecipes$ | async" [recipe]="recipe"></app-recipe-preview>
+</div>
+
+<h2>The fastest recipes:</h2>
+<div class="fastest-recipes">
+  <app-recipe-preview *ngFor="let recipe of fastestRecipes$ | async" [recipe]="recipe"></app-recipe-preview>
+</div>
+
+<h2>The cheapest recipes:</h2>
+<div class="cheapest-recipes">
+  <app-recipe-preview *ngFor="let recipe of cheapestRecipes$ | async" [recipe]="recipe"></app-recipe-preview>
+</div>

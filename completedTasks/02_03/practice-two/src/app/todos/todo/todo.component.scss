@@ -1,0 +1,53 @@
+$activeTaskColor: #1976d2;
+$inactiveTaskColor: #c6c6c6;
+
+.todo-item {
+  text-align: center;
+  user-select: none;
+  border: 2px solid  $activeTaskColor;
+  margin: 20px;
+  .btn-close {
+    float: right;
+    background: $activeTaskColor;
+    border: 1px solid $activeTaskColor;
+    color: white;
+    cursor: pointer;
+  }
+  .task-body {
+    padding: 10px 30px 30px;
+
+    h3 {
+      color: $activeTaskColor;
+    }
+    label {
+      background: $activeTaskColor;
+      padding: 10px;
+      color: white;
+      cursor: pointer;
+    }
+    input {
+      margin-top: 35px;
+    }
+    span {
+      font-weight: bold;
+      font-size: 12px;
+      color: $activeTaskColor;
+    }
+  }
+}
+
+.completed {
+  border: 2px solid $inactiveTaskColor;
+  pointer-events: none;
+  .btn-close {
+    pointer-events: auto;
+  }
+  .task-body {
+    h3, span {
+      color: $inactiveTaskColor;
+    }
+    label {
+      background: $inactiveTaskColor;
+    }
+  }
+}
